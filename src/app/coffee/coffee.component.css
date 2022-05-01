@@ -1,3 +1,19 @@
 .container {
     margin-top: 25px;
 }
+
+.container h1 {
+    font-family: 'Indie Flower';
+}
+
+.container img {
+    margin-bottom: 40px;
+}
+
+.container span {
+    margin-left: 25%;
+}
+
+.container .footer {
+    margin-top: 150px;
+}
