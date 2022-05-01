@@ -1,3 +1,7 @@
 * [lang^=en] {
   color: green;
 }
+
+.content span {
+  color: white;
+}

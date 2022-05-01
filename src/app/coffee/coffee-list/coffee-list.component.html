@@ -1,0 +1,21 @@
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="coffee-item" *ngFor="let coffee of coffeeList">
+      <th scope="row">{{ coffee.id }}</th>
+      <td>{{ coffee.nombre }}</td>
+      <td>{{ coffee.tipo }}</td>
+      <td>{{ coffee.region }}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<p>Total café de origen: {{ coffeeOriginType }}</p>
+<p>Total café blend: {{ coffeeBlendType }}</p>
