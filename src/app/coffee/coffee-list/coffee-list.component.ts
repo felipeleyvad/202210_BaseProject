@@ -10,6 +10,10 @@ import { CoffeeService } from '../coffee.service';
 export class CoffeeListComponent implements OnInit {
 
   coffeeList!: Coffee[]; 
+  coffeeOriginType: number = 0;
+  coffeeBlendType: number = 0;
+  ORIGIN_COFFEE = 'Café de Origen';
+  BLEND_COFFEE = 'Blend';
 
   constructor(private coffeeService: CoffeeService) { }
 
@@ -18,6 +22,16 @@ export class CoffeeListComponent implements OnInit {
   }
 
   getCoffeeList() {
-    return this.coffeeService.getCoffeeList().subscribe(coffeeList => this.coffeeList = coffeeList);
+    return this.coffeeService.getCoffeeList().subscribe(coffeeList => {
+      this.coffeeList = coffeeList;
+      coffeeList.forEach(coffeItem => {
+        if (coffeItem.tipo === this.ORIGIN_COFFEE) {
+          this.coffeeOriginType++;
+        }
+        if (coffeItem.tipo === this.BLEND_COFFEE) {
+          this.coffeeBlendType++;
+        }
+      });
+    });
   }
 }
